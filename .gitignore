@@ -1,0 +1,59 @@
+
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=postgres
+DB_PASSWORD=Admin@1234
+DB_NAME=edusafeguard
+DB_SSL=false
+
+JWT_SECRET=edusafeguard_jwt_secret_v2
+PORT=5000
+# Email config (Gmail recommended)
+# For Gmail: enable 2FA, then create an App Password at myaccount.google.com/apppasswords
+EMAIL_USER=ksrilakshmi.ai@gmail.com
+EMAIL_PASS=dwis rtvo pusi lyqb
+
+
+
+DB_HOST=dpg-d6pe7en5gffc7394q1fg-a.oregon-postgres.render.com
+DB_PORT=5432
+DB_USER=edusafeguard_user
+DB_PASSWORD=VchKdnAbF7FmVa2O9RRAA0Gx5CDmSgYC
+DB_NAME=edusafeguard
+JWT_SECRET=edusafeguard_jwt_secret_v2123
+PORT=5000
+EMAIL_USER=ksrilakshmi.ai@gmail.com
+EMAIL_PASS=dwis rtvo pusi lyqb
+```
+
+---
+
+## Step 7 — Create PostgreSQL Database on Render
+
+1. Go to **https://render.com** and log in
+2. Click **New** → **PostgreSQL**
+3. Fill in the form:
+
+| Field | Value |
+|-------|-------|
+| Name | `edusafeguard-db` |
+| Database | `edusafeguard` |
+| User | `edusafeguard_user` |
+| Region | `Oregon (US West)` or closest |
+| Plan | **Free** |
+
+4. Click **Create Database**
+5. Wait ~1 minute for it to provision
+6. On the database page, scroll down to **Connections** and copy these values:
+```
+Hostname:    dpg-xxxxxx.oregon-postgres.render.com
+Port:        5432
+Database:    edusafeguard
+Username:    edusafeguard_user
+Password:    (click to reveal)
+```
+
+Also copy the **External Database URL** — it looks like:
+```
+postgresql://edusafeguard_user:PASSWORD@dpg-xxx.oregon-postgres.render.com/edusafeguard
+node_modules/
